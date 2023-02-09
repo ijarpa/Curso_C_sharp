@@ -14,7 +14,7 @@ class Program
         string activePrompt = "";
 
 
-        Console.WriteLine("Welcome to the Journal Program!");
+        Console.WriteLine("Welcome to the Journal Program! v.2");
         int journalProgram = 0;
         while (journalProgram != 5)
         {
