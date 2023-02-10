@@ -21,10 +21,11 @@ class Program
 
         while (selectedIndices.Count < scriptureWords.Count)
         {
-            Console.WriteLine("Type 'hide' to hide 5 new words, or 'exit' to exit.\n");
+            Console.WriteLine("Type 'hide' to hide 5 new words, or 'quit' to exit.\n");
+            Console.Write(">");
             string input = Console.ReadLine();
 
-            if (input == "exit")
+            if (input == "quit")
             {
                 break;
             }
