@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class HideWords
 {
-    private Scripture scriptureClass = new Scripture();
+    private Scripture scriptureClass = new Scripture("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life");
     private List<string> scriptureList;
     private List<string> hiddenWords;
 

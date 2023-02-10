@@ -16,7 +16,7 @@ public class ScriptureReference
         lastVerse = firstVerse;
     }
 
-    public string ToString()
+    public override string ToString()
     {
         return $"{scripture} {chapter}:{firstVerse}";
     }
