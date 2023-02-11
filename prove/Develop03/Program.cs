@@ -14,7 +14,7 @@ class Program
         List<string> scriptureWords = scripture.GetScriptureWords();
         List<string> hiddenWords = hideListClass.GetHiddenScripture();
 
-        Console.WriteLine(reference.GetScriptureReference());
+        Console.WriteLine(reference.GetScriptureReference()); //return the scripture 
         Console.WriteLine(string.Join(" ", scriptureWords));
 
         List<int> selectedIndices = new List<int>();
