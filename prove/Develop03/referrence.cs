@@ -9,15 +9,34 @@ public class ScriptureReference
 
     public ScriptureReference(string reference)
     {
-        var parts = reference.Split(':', '-');
-        scripture = parts[0];
-        chapter = parts[1];
-        firstVerse = parts[2];
-        lastVerse = firstVerse;
+        if (reference.Contains('-'))
+        {
+            var parts = reference.Split(' ', ':', '-');
+            scripture = parts[0];
+            chapter = parts[1];
+            firstVerse = parts[2];
+            lastVerse = parts[3];
+        }
+        else
+        {
+            var parts = reference.Split(' ', ':');
+            scripture = parts[0];
+            chapter = parts[1];
+            firstVerse = parts[2];
+            //lastVerse = parts[3];    
+        }
+
     }
 
-    public override string ToString()
+    public string GetScriptureReference()
     {
-        return $"{scripture} {chapter}:{firstVerse}";
+        if (string.IsNullOrEmpty(lastVerse))
+        {
+            return $"{scripture} {chapter}:{firstVerse}";
+        }
+        else
+        {
+            return $"{scripture} {chapter}:{firstVerse}-{lastVerse}";
+        }
     }
 }

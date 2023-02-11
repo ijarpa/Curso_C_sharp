@@ -6,6 +6,7 @@ class Program
     static void Main(string[] args)
     {
         // call classes
+        ScriptureReference reference = new ScriptureReference("John 3:16");
         Scripture scripture = new Scripture("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life");
         HideWords hideListClass = new HideWords();
         
@@ -13,6 +14,7 @@ class Program
         List<string> scriptureWords = scripture.GetScriptureWords();
         List<string> hiddenWords = hideListClass.GetHiddenScripture();
 
+        Console.WriteLine(reference.GetScriptureReference());
         Console.WriteLine(string.Join(" ", scriptureWords));
 
         List<int> selectedIndices = new List<int>();
@@ -30,7 +32,7 @@ class Program
             }
             else if (input == "hide")
             {
-                int missingWords = scriptureWords.Count - selectedIndices.Count;
+                int missingWords = scriptureWords.Count - selectedIndices.Count; //count of words that are not hidden
 
                 if (missingWords < 3)
                 {
