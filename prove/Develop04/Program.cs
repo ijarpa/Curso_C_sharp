@@ -17,8 +17,6 @@ class Program
             Console.Write("Select a choice from the menu: ");
         
             string userChoice = Console.ReadLine();
-
-            if (userChoice = "1"):
         }
 
     }
