@@ -31,7 +31,7 @@ public class Messages
     public void Loading()
     {
         int x = 0;
-        while (x < 4)
+        while (x < 3) //duration 6 seconds
         {
             Console.Write("|");
             Thread.Sleep(500);
