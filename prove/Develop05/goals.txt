@@ -1,2 +1,1 @@
-meta,desc,500,False
-meta 2,desc 2,1000,True
+simple 1,desc 1,500,False

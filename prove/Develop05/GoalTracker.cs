@@ -16,20 +16,30 @@ class GoalTracker
         _goalsList.Add(data);
     }
 
-    public void UpdateGoal(int index, bool status)
+    public void UpdateGoal(int index, bool status, string gtype)
     {
         var goal = _goalsList[index];
         goal.GoalStatus = status;
+        goal.GoalType = gtype;
 
-        if (status == true)
+        if (status == true && gtype == "1")
         {
             goal.GoalCheckBox = "[x]";
             _userScore += goal.GoalPoints;
         }
-        else
+        else if (status == false && gtype == "1")
         {
             goal.GoalCheckBox = "[ ]";
             _userScore -= goal.GoalPoints;
+        }
+        else if (status == true && gtype == "2")
+        {
+            goal.GoalCheckBox = "[ ]";
+            _userScore += goal.GoalPoints;
+        }
+        else
+        {
+            Console.WriteLine("Error, check again the Index/Status/Goal Type");
         }
     }
 
