@@ -89,10 +89,13 @@ class Program
                     Console.WriteLine("Enter the goal index:");
                     int index = int.Parse(Console.ReadLine()) - 1;
 
-                    Console.WriteLine("Enter the goal status (true/false):");
+                    Console.WriteLine("Is done the goal?: (true/false):");
                     bool status = bool.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Enter the goal type (1. Simple/ 2. Eternal):");
+                    Console.WriteLine("Enter the goal type:");
+                    Console.WriteLine("1. Simple");
+                    Console.WriteLine("2. Eternal");
+                    Console.WriteLine("3. Check List");
                     string gtype = Console.ReadLine();
 
                     goalTracker.UpdateGoal(index, status, gtype);

@@ -5,7 +5,6 @@ class GoalTracker
 {
     private List<Goal> _goalsList;
     private int _userScore;
- 
     public GoalTracker()
     {
         _goalsList = new List<Goal>();
@@ -18,6 +17,8 @@ class GoalTracker
 
     public void UpdateGoal(int index, bool status, string gtype)
     {
+        //ChecklistGoal myGoal = new ChecklistGoal(goalAccomplished, goalBonus, goalNeeded);
+
         var goal = _goalsList[index];
         goal.GoalStatus = status;
         goal.GoalType = gtype;
