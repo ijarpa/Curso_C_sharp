@@ -1,26 +1,14 @@
 public class EternalGoal : Goal
 {
-    private int _frequency;
 
-    public int Frequency
+    public EternalGoal(string checkBox, string name, string description, int points, bool status)
+        : base(checkBox, name, description, points, status)
     {
-        get { return _frequency; }
-        set { _frequency = value; }
-    }
-
-    public EternalGoal(string checkBox, string name, string description, int points, bool status, int frequency) : base(checkBox, name, description, points, status)
-    {
-        _frequency = frequency;
     }
 
     public override void Display()
     {
-        Console.WriteLine("Eternal goal:");
-        Console.WriteLine($"Name: {GoalName}");
-        Console.WriteLine($"Description: {GoalDescription}");
-        Console.WriteLine($"Points: {GoalPoints}");
-        Console.WriteLine($"Status: {GoalStatus}");
-        Console.WriteLine($"Frequency: {_frequency}");
+        Console.WriteLine($"{GoalCheckBox} - {GoalName} - {GoalDescription} - {GoalPoints} points - {GoalStatus}");
     }
 
     public void RecordProgress()

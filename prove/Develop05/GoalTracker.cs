@@ -5,7 +5,7 @@ class GoalTracker
 {
     private List<Goal> _goalsList;
     private int _userScore;
-
+ 
     public GoalTracker()
     {
         _goalsList = new List<Goal>();
@@ -37,14 +37,19 @@ class GoalTracker
     public void ShowGoals()
     {
         Console.WriteLine("List of Goals:");
+        int index = 1; // Inicializamos el índice en 1
         foreach (Goal data in _goalsList)
         {
-            data.Display();
+            Console.Write($"{index}. "); // Imprimimos el índice antes de los datos
+            data.Display(); // Imprimimos los datos de la meta
+            index++; // Incrementamos el índice en 1
         }
+        Console.WriteLine();
     }
-    public int ShowScore()
+
+    public void ShowScore()
     {
-        return _userScore;
+        Console.WriteLine(_userScore);
     }
 
 
@@ -55,10 +60,6 @@ class GoalTracker
             foreach (Goal goal in _goalsList)
             {
                 writer.WriteLine($"{goal.GoalName},{goal.GoalDescription},{goal.GoalPoints},{goal.GoalStatus}");
-                if (goal is EternalGoal)
-                {
-                    writer.WriteLine(((EternalGoal)goal).Frequency);
-                }
                 //else if (goal is ChecklistGoal)
                 //{
                 //    writer.WriteLine($"{((ChecklistGoal)goal).GoalTarget},{((ChecklistGoal)goal).GoalCompleted}");
@@ -67,30 +68,30 @@ class GoalTracker
         }
     }
 
-    public void LoadGoals(string fileName)
-    {
-        using (StreamReader reader = new StreamReader(fileName))
-        {
-            while (!reader.EndOfStream)
-            {
-                string[] goalData = reader.ReadLine().Split(',');
-                switch (goalData[0])
-                {
-                    case "SimpleGoal":
-                        AddGoal(new SimpleGoal(goalData[1], goalData[2], goalData[3], int.Parse(goalData[4]), bool.Parse(goalData[5])));
-                        break;
-                    case "EternalGoal":
-                        AddGoal(new EternalGoal(goalData[1], goalData[2], goalData[3], int.Parse(goalData[4]), bool.Parse(goalData[5]), int.Parse(reader.ReadLine())));
-                        break;
-                    //case "ChecklistGoal":
-                    //    string[] checklistData = reader.ReadLine().Split(',');
-                    //    AddGoal(new ChecklistGoal(goalData[1], goalData[2], goalData[3], int.Parse(goalData[4]), bool.Parse(goalData[5]), int.Parse(checklistData[0]))
-                    //    {
-                    //        GoalCompleted = int.Parse(checklistData[1])
-                    //    });
-                    //    break;
-                }
-            }
-        }
-    }
+    //public void LoadGoals(string fileName)
+    //{
+    //    using (StreamReader reader = new StreamReader(fileName))
+    //    {
+    //        while (!reader.EndOfStream)
+    //        {
+    //            string[] goalData = reader.ReadLine().Split(',');
+    //            switch (goalData[0])
+    //            {
+    //                case "SimpleGoal":
+    //                    AddGoal(new SimpleGoal(goalData[1], goalData[2], goalData[3], goalData[4], int.Parse(goalData[5]), bool.Parse(goalData[6])));
+    //                    break;
+    //                case "EternalGoal":
+    //                    AddGoal(new EternalGoal(goalData[1], goalData[2], goalData[3], goalData[4], int.Parse(goalData[5]), bool.Parse(goalData[6]), int.Parse(reader.ReadLine())));
+    //                    break;
+    //                //case "ChecklistGoal":
+    //                //    string[] checklistData = reader.ReadLine().Split(',');
+    //                //    AddGoal(new ChecklistGoal(goalData[1], goalData[2], goalData[3], int.Parse(goalData[4]), bool.Parse(goalData[5]), int.Parse(checklistData[0]))
+    //                //    {
+    //                //        GoalCompleted = int.Parse(checklistData[1])
+    //                //    });
+    //                //    break;
+    //            }
+    //        }
+    //    }
+    //}
 }

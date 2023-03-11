@@ -7,11 +7,12 @@ class Program
         GoalTracker goalTracker = new GoalTracker();
         string fileName = "goals.txt";
 
-        int userScore = goalTracker.ShowScore();
+        //int userScore = goalTracker.ShowScore();
 
         while (true)
         {
-            Console.WriteLine("The current user score is: " + userScore);
+            Console.Write("The current user score is: ");
+            goalTracker.ShowScore();
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goal");
@@ -35,13 +36,13 @@ class Program
                     Console.Write("Which type of goal would you like to create?: ");
                     string goalType = Console.ReadLine();
 
-                    Console.WriteLine("What is the name of your goal?: ");
+                    Console.Write("What is the name of your goal?: ");
                     string goalName = Console.ReadLine();
 
-                    Console.WriteLine("Enter the goal description:");
+                    Console.Write("Enter the goal description: ");
                     string goalDescription = Console.ReadLine();
 
-                    Console.WriteLine("Enter the goal points:");
+                    Console.Write("Enter the goal points: ");
                     int goalPoints = int.Parse(Console.ReadLine());
 
                     //Console.WriteLine("Enter the goal status (true/false):");
@@ -55,9 +56,7 @@ class Program
                     }
                     else if (goalType == "2")
                     {
-                        Console.WriteLine("Enter the frequency:");
-                        int frequency = int.Parse(Console.ReadLine());
-                        goalTracker.AddGoal(new EternalGoal(goalCheckBox, goalName, goalDescription, goalPoints, goalStatus, frequency));
+                        goalTracker.AddGoal(new EternalGoal(goalCheckBox, goalName, goalDescription, goalPoints, goalStatus));
                     }
                     else if (goalType == "3")
                     {
@@ -69,19 +68,18 @@ class Program
 
                 case 2:
                     goalTracker.ShowGoals();
-                    goalTracker.ShowScore();
                     break;
                 case 3:
                     goalTracker.SaveGoals(fileName);
                     Console.WriteLine($"Goals saved to file: {fileName}");
                     break;
                 case 4:
-                    goalTracker.LoadGoals(fileName);
-                    Console.WriteLine($"Goals loaded from file: {fileName}");
+                    //goalTracker.LoadGoals(fileName);
+                    //Console.WriteLine($"Goals loaded from file: {fileName}");
                     break;
                 case 5:
                     Console.WriteLine("Enter the goal index:");
-                    int index = int.Parse(Console.ReadLine());
+                    int index = int.Parse(Console.ReadLine()) - 1;
 
                     Console.WriteLine("Enter the goal status (true/false):");
                     bool status = bool.Parse(Console.ReadLine());

@@ -1,6 +1,7 @@
 public class SimpleGoal : Goal
 {
-    public SimpleGoal(string checkBox, string name, string description, int points, bool status) : base(checkBox, name, description, points, status)
+    public SimpleGoal(string checkBox, string name, string description, int points, bool status) 
+        : base(checkBox, name, description, points, status)
     {
     }
 
