@@ -101,12 +101,12 @@ class GoalTracker
                     if (goal is ChecklistGoal)
                     {
                         var goalChecklist = (ChecklistGoal)goal;
-                        writer.WriteLine($"{goal.GoalCheckBox}, {goal.GoalType}, {goal.GoalName},{goal.GoalDescription},{goal.GoalPoints},{goal.GoalStatus},{goalChecklist.GoalAccomplished},{goalChecklist.GoalNeeded},{goalChecklist.GoalBonus}");
+                        writer.WriteLine($"{goal.GoalCheckBox},{goal.GoalType},{goal.GoalName},{goal.GoalDescription},{goal.GoalPoints},{goal.GoalStatus},{goalChecklist.GoalAccomplished},{goalChecklist.GoalNeeded},{goalChecklist.GoalBonus}");
                     }
                 }
                 else
                 {
-                    writer.WriteLine($"{goal.GoalCheckBox}, {goal.GoalType}, {goal.GoalName},{goal.GoalDescription},{goal.GoalPoints},{goal.GoalStatus}");
+                    writer.WriteLine($"{goal.GoalCheckBox},{goal.GoalType},{goal.GoalName},{goal.GoalDescription},{goal.GoalPoints},{goal.GoalStatus}");
                 }
             }
         }

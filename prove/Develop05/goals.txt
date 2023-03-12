@@ -1,4 +1,4 @@
-1100
-[X], 1,natalia simple,descripcion simple,1000,False
-[ ], 2,natalia eternal,descripcion eternal,100,False
-[ ], 3,natalia checklist,desc check,100,False,1,3,5000
+3250
+[X],  1, natalia simple,descripcion simple,1000,False
+[ ],  2, natalia eternal,descripcion eternal,100,False
+[x],3,final test,final description,50,False,3,3,2000
