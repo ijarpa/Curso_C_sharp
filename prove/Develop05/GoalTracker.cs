@@ -73,12 +73,12 @@ class GoalTracker
     public void ShowGoals()
     {
         Console.WriteLine("List of Goals:");
-        int index = 1; // Inicializamos el índice en 1
+        int index = 1;
         foreach (Goal data in _goalsList)
         {
-            Console.Write($"{index}. "); // Imprimimos el índice antes de los datos
-            data.Display(); // Imprimimos los datos de la meta
-            index++; // Incrementamos el índice en 1
+            Console.Write($"{index}. ");
+            data.Display();
+            index++;
         }
         Console.WriteLine();
     }
