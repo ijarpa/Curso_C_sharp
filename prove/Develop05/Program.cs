@@ -78,10 +78,14 @@ class Program
                 case 3:
                     goalTracker.SaveGoals(fileName);
                     Console.WriteLine($"Goals saved to file: {fileName}");
+                    Thread.Sleep(1500);
+                    Console.Clear();
                     break;
                 case 4:
-                    //goalTracker.LoadGoals(fileName);
-                    //Console.WriteLine($"Goals loaded from file: {fileName}");
+                    goalTracker.LoadGoals(fileName);
+                    Console.WriteLine($"Goals loaded from file: {fileName}");
+                    Thread.Sleep(1500);
+                    Console.Clear();
                     break;
                 case 5:
                     Console.Clear();
@@ -97,6 +101,7 @@ class Program
                     Console.WriteLine("2. Eternal");
                     Console.WriteLine("3. Check List");
                     string gtype = Console.ReadLine();
+
 
                     goalTracker.UpdateGoal(index, status, gtype);
                     break;

@@ -13,6 +13,6 @@ public class ChecklistGoal : Goal
 
     public override void Display()
     {
-        Console.WriteLine($"{GoalCheckBox} - type: {GoalType} - {GoalName} - {GoalDescription} - {GoalPoints} points - {GoalStatus} --- Currently completed: {GoalAccomplished}/{GoalNeeded} -- bonus: {GoalBonus}");
+        Console.WriteLine($"{GoalCheckBox} - type: {GoalType} - {GoalName} - {GoalDescription} - {GoalPoints} points - {GoalStatus} ----- Currently completed: {GoalAccomplished}/{GoalNeeded} || bonus: {GoalBonus}");
     }
 }
